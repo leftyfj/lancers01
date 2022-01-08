@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Twitter検索ツール</title>
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/style.css">
+  <script type="text/javascript" src="/eel.js"></script>
+</head>
+<body>
+  <div class="container py-5">
+    <h1 class="text-center mb-5">Twitter検索ツール</h1>
+    <div class="row">
+     
+      
+       <div class="col-6">
+    <!-- <form> -->
+    <div class="form-group border p-3">
+      <h3 class="div_header mb-3">キーワードをつぶやいた人を検索します</h3>
+      <label for="keyword_search_users">キーワード</label>
+      <input type="text" class="form-control" id="keyword_search_users" >
+      <input type="button" id="search_users" onclick="getKeyword_search_users()" class="btn btn-primary mt-3" value="検索">
+    </div>
+
+    <div class="form-group border p-3">
+      <h3 class="div_header mb-3">キーワードをプロフイール、名前に含む人を検索します</h3>
+      <label for="keyword_search_users">キーワード</label>
+      <input type="text" class="form-control" id="keyword_search_users_profile" >
+      <input type="button" id="search_users_profile" onclick="getKeyword_search_users_profile()" class="btn btn-primary mt-3" value="検索">
+    </div>
+
+  <!-- </form> -->
+  </div><!-- /.col-6 -->
+  <div class="col-6">
+    <div class="form-group border p-3">
+      <h3 class="div_header mb-3">リスト一覧を取得します。</h3>
+      <label for="screen_name">screen_name</label>
+      <input type="text" class="form-control" id="screen_name" >
+       <input type="button" id="" onclick="get_lists_all()" class="btn btn-success mt-3" value="取得">
+    </div>
+    <div class="form-group border p-3">
+      <h3 class="div_header mb-3">アカウントのリストにユーザーを登録します。</h3>
+      <label for="screen_name">list_id<label>
+      <input type="text" class="form-control" id="list_id" >
+       <input type="button" id="" onclick="(upload_users())" class="btn btn-success mt-3" value="登録">
+       <p class="precautions mt-2">
+         *ユーザーリストを「addlist.csv」のファイル名で「addlist」フォルダ内に保存してください。<br>
+       </p>
+    </div>
+  </div><!-- /.col-6 -->
+    </div><!-- /.row -->
+  </div><!-- /.container -->
+  <script src="js/bootstrap.min.js"></script>
+  <script type="text/javascript" src="js/main.js">
+  </script>
+</body>
+</html>

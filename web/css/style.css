@@ -1,0 +1,17 @@
+table > tbody > tr > th {
+  text-align: center;
+}
+
+
+.btn {
+  width: 120px;
+}
+
+.div_header {
+  font-size: 18px;
+}
+
+
+.precautions {
+  font-size: small;
+}
