@@ -11,27 +11,21 @@
 </head>
 <body>
   <div class="container py-5">
-    <h1 class="text-center mb-5">Twitter検索ツール</h1>
+    <h1 class="text-center mb-5">Twitter 検索・リスト作成ツール</h1>
     <div class="row">
       <div class="col-6">
         <div class="form-group border p-3">
           <h3 class="div_header mb-3">キーワードをつぶやいた人を検索します</h3>
           <label for="keyword_search_users">キーワード</label>
           <input type="text" class="form-control" id="keyword_search_users" >
-        
-  
-              <input type="button" id="search_users" onclick="getKeyword_search_users()" class="btn btn-primary mt-3" value="検索"><span id="undersearch_users" class="ml-5">検索中...しばらくお待ち下さい。</span>
-              
-         
-        
-        
+              <input type="button" id="search_users" onclick="getKeyword_search_users()" class="btn btn-primary mt-3" value="検索"><span id="searching_users" class="ml-5">検索中...しばらくお待ち下さい。</span>
         </div>
 
         <div class="form-group border p-3">
           <h3 class="div_header mb-3">キーワードをプロフイール、名前に含む人を検索します</h3>
           <label for="keyword_search_users">キーワード</label>
           <input type="text" class="form-control" id="keyword_search_users_profile" >
-          <input type="button" id="search_users_profile" onclick="getKeyword_search_users_profile()" class="btn btn-primary mt-3" value="検索">
+          <input type="button" id="search_users_profile" onclick="getKeyword_search_users_profile()" class="btn btn-primary mt-3" value="検索"><span id="searching_users_profile" class="ml-5">検索中...しばらくお待ち下さい。</span>
         </div>
         <div class="form-group border p-3">
           <h3 class="div_header mb-3">アカウントに新しいリストを作成します</h3>
@@ -44,21 +38,23 @@
       </div><!-- /.col-6 -->
   <div class="col-6">
     <div class="form-group border p-3">
-      <h3 class="div_header mb-3">リスト一覧を取得します。</h3>
+      <h3 class="div_header mb-3">アカウントに登録したリスト一覧を取得します。<small>(list_id取得用)</small></h3>
+     
       <label for="screen_name">screen_name</label>
       <input type="text" class="form-control" id="screen_name" >
-       <input type="button" id="" onclick="get_lists_all()" class="btn btn-success mt-3" value="取得">
+       <input type="button" id="" onclick="get_lists_all()" class="btn btn-success mt-3" value="取得"><span id="getting_lists" class="ml-5">取得中...しばらくお待ち下さい。</span>
     </div>
     <div class="form-group border p-3">
       <h3 class="div_header mb-3">アカウントのリストにユーザーを登録します。</h3>
-      <label for="screen_name">list_id<label>
+      <label for="list_id">list_id<label>
       <input type="text" class="form-control" id="list_id" >
-       <input type="button" id="" onclick="(upload_users())" class="btn btn-success mt-3" value="登録">
+       <input type="button" id="" onclick="(upload_users())" class="btn btn-success mt-3" value="登録"><span id="uploading_users" class="ml-5">登録中...しばらくお待ち下さい。</span>
        <p class="precautions mt-2">
-         *ユーザーリストを「addlist.csv」のファイル名で「addlist」フォルダ内に保存してください。
+        * ユーザーリストを「addlist.csv」のファイル名で「addlist」フォルダ内に保存してください。 <br>
+        * addlis.csvの1列目はscreen_nameです。(必須) ２列目以降にデータはあってもなくても構いません。
          <br>
-         「addlist.csv」にはヘッダー(項目名)は不要です。データを直接貼り付けて下さい。<br>
-         (★csvファイルにデータのコピー＆ペーストするにはExcelよりテキストエディタで開くことを推奨)
+        * 「addlist.csv」にはヘッダー(項目名)は不要です。データを直接貼り付けて下さい。<br>
+         
        </p>
     </div>
     

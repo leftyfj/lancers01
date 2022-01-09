@@ -9,7 +9,7 @@ import common.desktop as desktop
 #フォルダ名
 app_name = "web"
 end_point = "index.html"
-size = size=(900, 600)
+size = size=(1280, 800)
 
 
 @eel.expose
@@ -32,17 +32,27 @@ def search_tweet(keyword):
   
 @eel.expose
 def search_users(keyword):
-  search.search_profile_by_keyword(keyword)
-
+  res = search.search_profile_by_keyword(keyword)
+  df = res[0]
+  finish_flag = res[1]
+  util.save_csvfile('users_profile_', keyword, df, 'search')
+  
+  return finish_flag
 
 @eel.expose
 def get_lists_all(screen_name):
-  df = search.get_lists_all(screen_name)
+  res = search.get_lists_all(screen_name)
+  df = res[0]
+  finish_flag = res[1]
   util.save_csvfile('list_all_', screen_name, df, 'lists')
+  
+  return finish_flag
   
 @eel.expose
 def upload_users(list_id):
-  upload.add_users_to_list(list_id)
+  finish_flag  = upload.add_users_to_list(list_id)
+  
+  return finish_flag
   
 @eel.expose
 def make_new_list(list_name, list_desc):

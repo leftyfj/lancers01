@@ -26,13 +26,15 @@ def add_users_to_list(list_id):
  
   for screen_name in screen_name_list:
     try:
+      print(screen_name)
       api.add_list_member(list_id = list_id, screen_name = screen_name)
       time.sleep(config.SLEEP_TIME)
     except Exception as e:
       print(e)
       print('リストできないユーザーが見つかりました。スキップします。')
-    finally:
-      print('リスト化終了')
+   
+  print('リスト化完了')
+  return 'True'
       
 def main():
   api = authentication.auth_twitter_api()

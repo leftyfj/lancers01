@@ -37,7 +37,6 @@ def search_tweet_by_keyword(keyword):
   df = df.drop_duplicates(subset=['id'])
   
   return df, 'True'
-  # util.save_csvfile('users_', keyword, df, 'search')
   
   
 def search_profile_by_keyword(keyword):
@@ -61,7 +60,8 @@ def search_profile_by_keyword(keyword):
   df =pd.DataFrame(temp_list, columns=cols)
   df = df.drop_duplicates(subset=['id'])
   
-  util.save_csvfile('users_profile_', keyword, df, 'search')
+  return df, 'True'
+  
   
 def get_list_id(list_detail):
   list_id = list_detail._json['id']
@@ -73,12 +73,12 @@ def get_lists_all(screen_name):
   for twilist in (api.lists_all(screen_name = screen_name)):
     #print(twilist._json)
     list_detail = twilist._json
-    temp_list.append([list_detail['screen_name'],list_detail['id'],list_detail['name'],list_detail['description']])
+    temp_list.append([list_detail['id'], list_detail['name'], list_detail['description']])
     
-  cols = config.cols_desc
+  cols = config.cols_list
   df = pd.DataFrame(temp_list, columns=cols)
   
-  return df  
+  return df, 'True'
   
 
 def search_follower(screen_name):

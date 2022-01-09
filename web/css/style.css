@@ -2,6 +2,9 @@ table > tbody > tr > th {
   text-align: center;
 }
 
+.container {
+  background-color: #f5fff8;
+}
 
 .btn {
   width: 120px;
@@ -21,7 +24,10 @@ table > tbody > tr > th {
   width: 100%;
 }
 
-#undersearch_users {
+#searching_users,
+#searching_users_profile,
+#getting_lists,
+#uploading_users {
   color:blue;
   font-weight:bold;
   display: none;
