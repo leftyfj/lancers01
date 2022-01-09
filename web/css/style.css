@@ -20,3 +20,9 @@ table > tbody > tr > th {
 #new_list_desc {
   width: 100%;
 }
+
+#undersearch_users {
+  color:blue;
+  font-weight: bold;
+  display: none;
+}

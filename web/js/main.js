@@ -1,8 +1,12 @@
 
 async function getKeyword_search_users() {
   let keyword_search_users = document.getElementById('keyword_search_users').value;
-
-  await eel.search_tweet(keyword_search_users);
+  document.getElementById("undersearch_users").style.display = "block";
+  // await eel.search_tweet(keyword_search_users);
+  inst = 'stop'
+  if (inst=='stop'){
+    document.getElementById("undersearch_users").style.display = "none";
+  }
 }
 
 async function getKeyword_search_users_profile() {

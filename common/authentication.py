@@ -1,5 +1,5 @@
 # from typing import Annotated, ClassVar
-from apikeys import *
+from common.apikeys import *
 import tweepy
 
 global CK
@@ -7,9 +7,9 @@ global CS
 global AT
 global ATS
 
-CK=consumer_key
-CS=consumer_secret
-AT=access_token
+CK = consumer_key
+CS = consumer_secret
+AT = access_token
 ATS = access_token_secret
 
 # 認証手続き

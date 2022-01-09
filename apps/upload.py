@@ -3,14 +3,13 @@ import json
 import pandas as pd
 import os
 import datetime
-from apikeys import *
+from common.apikeys import *
 import common.authentication as authentication
+import common.config as config
 import time
 
 def set_new_list(list_name, list_desc):
   api = authentication.auth_twitter_api()
-  # list_name = input('リスト名 ==>')
-  # list_desc = input('リスト内容の説明 ==>')
   list_mode = 'public'
   
   list_detail = api.create_list(name=list_name, mode=list_mode, description = list_desc)
@@ -28,7 +27,7 @@ def add_users_to_list(list_id):
   for screen_name in screen_name_list:
     try:
       api.add_list_member(list_id = list_id, screen_name = screen_name)
-      time.sleep(2)
+      time.sleep(config.SLEEP_TIME)
     except Exception as e:
       print(e)
       print('リストできないユーザーが見つかりました。スキップします。')
