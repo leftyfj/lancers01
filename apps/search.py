@@ -35,7 +35,9 @@ def search_tweet_by_keyword(keyword):
 
   #重複してツイートしている人を削除
   df = df.drop_duplicates(subset=['id'])
-  util.save_csvfile('users_', keyword, df, 'search')
+  
+  return df, 'True'
+  # util.save_csvfile('users_', keyword, df, 'search')
   
   
 def search_profile_by_keyword(keyword):

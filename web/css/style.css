@@ -23,6 +23,6 @@ table > tbody > tr > th {
 
 #undersearch_users {
   color:blue;
-  font-weight: bold;
+  font-weight:bold;
   display: none;
 }

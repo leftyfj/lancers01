@@ -22,7 +22,13 @@ def text_function(str):
 
 @eel.expose
 def search_tweet(keyword):
-  search.search_tweet_by_keyword(keyword)
+  res = search.search_tweet_by_keyword(keyword)
+  print(res[1])
+  df = res[0]
+  finish_flag = res[1]
+  util.save_csvfile('users_', keyword, df, 'search')
+  
+  return finish_flag
   
 @eel.expose
 def search_users(keyword):

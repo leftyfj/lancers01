@@ -1,13 +1,18 @@
 
 async function getKeyword_search_users() {
   let keyword_search_users = document.getElementById('keyword_search_users').value;
-  document.getElementById("undersearch_users").style.display = "block";
-  // await eel.search_tweet(keyword_search_users);
-  inst = 'stop'
-  if (inst=='stop'){
-    document.getElementById("undersearch_users").style.display = "none";
+  if(keyword_search_users) {
+    document.getElementById("undersearch_users").style.display = "inline-block";
   }
+
+  let finish_flag = await eel.search_tweet(keyword_search_users)();
+  
+  if(finish_flag == 'True') {
+     document.getElementById("undersearch_users").style.display = "none";
+  }
+ 
 }
+
 
 async function getKeyword_search_users_profile() {
   let keyword_search_users_profile = document.getElementById('keyword_search_users_profile').value;

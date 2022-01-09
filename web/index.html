@@ -18,15 +18,13 @@
           <h3 class="div_header mb-3">キーワードをつぶやいた人を検索します</h3>
           <label for="keyword_search_users">キーワード</label>
           <input type="text" class="form-control" id="keyword_search_users" >
-          <div class="row">
-            <div class="col-4">
-              <input type="button" id="search_users" onclick="getKeyword_search_users()" class="btn btn-primary mt-3" value="検索">
-            </div><!-- /.col-5 -->
-            <div class="col-8 pt-3">
-              <p id="undersearch_users">検索中...しばらくお待ち下さい。</p>
-            </div><!-- /.col-7 -->
-
-          </div><!-- /.row -->
+        
+  
+              <input type="button" id="search_users" onclick="getKeyword_search_users()" class="btn btn-primary mt-3" value="検索"><span id="undersearch_users" class="ml-5">検索中...しばらくお待ち下さい。</span>
+              
+         
+        
+        
         </div>
 
         <div class="form-group border p-3">

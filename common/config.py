@@ -3,7 +3,7 @@ cols = ['screen_name', 'id', 'name']
 cols_desc= ['screen_name', 'id', 'name', 'description']
 
 #情報取得の最大件数
-MAX_ITEMS = 1000
+MAX_ITEMS = 20
 
 #凍結を防ぐためにアクセスに間隔を空ける
 SLEEP_TIME = 1
