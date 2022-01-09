@@ -7,8 +7,8 @@ import traceback
 import time
 
 from apikeys import *
-import authentication
-import common
+import common.authentication as authentication
+import common.util as util
 
 
 #キーワードをつぶやいた人を検索する
@@ -34,7 +34,7 @@ def search_tweet_by_keyword(keyword):
 
   #重複してツイートしている人を削除
   df = df.drop_duplicates(subset=['id'])
-  common.save_csvfile('users_', keyword, df, 'search')
+  util.save_csvfile('users_', keyword, df, 'search')
   
   
 def search_profile_by_keyword(keyword):
@@ -58,7 +58,7 @@ def search_profile_by_keyword(keyword):
   df =pd.DataFrame(temp_list, columns=cols)
   df = df.drop_duplicates(subset=['id'])
   
-  common.save_csvfile('users_profile_', keyword, df, 'search')
+  util.save_csvfile('users_profile_', keyword, df, 'search')
   
 def get_list_id(list_detail):
   list_id = list_detail._json['id']

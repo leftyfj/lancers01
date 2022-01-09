@@ -4,12 +4,13 @@ import pandas as pd
 import os
 import datetime
 from apikeys import *
-import authentication
+import common.authentication as authentication
 import time
 
-def make_new_list(api):
-  list_name = input('リスト名 ==>')
-  list_desc = input('リスト内容の説明 ==>')
+def set_new_list(list_name, list_desc):
+  api = authentication.auth_twitter_api()
+  # list_name = input('リスト名 ==>')
+  # list_desc = input('リスト内容の説明 ==>')
   list_mode = 'public'
   
   list_detail = api.create_list(name=list_name, mode=list_mode, description = list_desc)
@@ -36,7 +37,7 @@ def add_users_to_list(list_id):
       
 def main():
   api = authentication.auth_twitter_api()
-  add_users_to_list(api)
+  # add_users_to_list(api)
   
 if __name__ == "__main__":
     main()

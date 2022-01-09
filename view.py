@@ -1,10 +1,15 @@
 import eel
-import search
-import upload
-import authentication
+import apps.search as search
+import apps.upload as upload
+import common.authentication as authentication
 import pandas as pd
-import common
+import common.util as util
+import common.desktop as desktop
 
+#フォルダ名
+app_name = "web"
+end_point = "index.html"
+size = size=(900, 600)
 
 
 @eel.expose
@@ -24,20 +29,22 @@ def search_users(keyword):
   search.search_profile_by_keyword(keyword)
 
 
-
 @eel.expose
 def get_lists_all(screen_name):
   df = search.get_lists_all(screen_name)
-  common.save_csvfile('list_all_', screen_name, df, 'lists')
+  util.save_csvfile('list_all_', screen_name, df, 'lists')
   
 @eel.expose
 def upload_users(list_id):
   upload.add_users_to_list(list_id)
   
-def main():
-  eel.init('web')
-  eel.start("index.html", size=(900, 600))
+@eel.expose
+def make_new_list(list_name, list_desc):
+  upload.set_new_list(list_name, list_desc)
 
+  
+def main():
+  desktop.start(app_name,end_point,size)
   
   
 if __name__ == "__main__":

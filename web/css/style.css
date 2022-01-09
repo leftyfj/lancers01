@@ -9,9 +9,14 @@ table > tbody > tr > th {
 
 .div_header {
   font-size: 18px;
+  font-weight:600;
 }
 
 
 .precautions {
   font-size: small;
+}
+
+#new_list_desc {
+  width: 100%;
 }

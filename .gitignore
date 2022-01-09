@@ -154,4 +154,6 @@ cython_debug/
 request.txt
 TODO.txt
 search/
+lists/
+addlist/
 tw_search_twitter_by_keyword
