@@ -12,9 +12,9 @@ end_point = "index.html"
 size = size=(1280, 800)
 
 
-@eel.expose
-def text_function(str):
-  print(str)
+# @eel.expose
+# def text_function(str):
+#   print(str)
 
 
 @eel.expose

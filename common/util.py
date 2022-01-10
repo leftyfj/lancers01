@@ -7,6 +7,3 @@ def save_csvfile(prefix, keyword, df, foldername):
   path = f'./{foldername}/' + filename
   os.makedirs(os.path.dirname(path), exist_ok=True)
   df.to_csv(path, encoding='utf_8_sig', index=False)
-  
-def show_progress(message):
-  pass
