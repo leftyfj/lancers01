@@ -2,7 +2,7 @@ import eel
 import apps.search as search
 import apps.upload as upload
 import common.authentication as authentication
-import pandas as pd
+# import pandas as pd
 import common.util as util
 import common.desktop as desktop
 
@@ -16,9 +16,6 @@ size = size=(1280, 800)
 def text_function(str):
   print(str)
 
-# @eel.expose
-# def test(str):
-#   tw_search_twitter_by_keyword.import_test(str)
 
 @eel.expose
 def search_tweet(keyword):

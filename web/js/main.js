@@ -8,7 +8,7 @@ async function getKeyword_search_users() {
   let finish_flag = await eel.search_tweet(keyword_search_users)();
   
   if(finish_flag == 'True') {
-     document.getElementById("searcingh_users").style.display = "none";
+     document.getElementById("searching_users").style.display = "none";
   }
  
 }
