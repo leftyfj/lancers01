@@ -60,6 +60,16 @@ async function upload_users(){
 async function make_new_list(){
   let new_list_name= document.getElementById('new_list_name').value;
   let new_list_desc= document.getElementById('new_list_desc').value;
-  await eel.make_new_list(new_list_name,new_list_desc)
+  
+  if(new_list_name) {
+    document.getElementById("making_new_list").style.display = "inline-block";
+  }
+
+
+  let finish_flag = await eel.make_new_list(new_list_name,new_list_desc)()
+
+   if(finish_flag == 'True') {
+     document.getElementById("making_new_list").style.display = "none";
+  }
  
 }

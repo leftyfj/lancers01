@@ -14,7 +14,10 @@ def set_new_list(list_name, list_desc):
   
   list_detail = api.create_list(name=list_name, mode=list_mode, description = list_desc)
   
-  return list_detail
+  if list_detail:
+    finish_flag = 'True'
+  
+  return finish_flag
 
 def add_users_to_list(list_id):
   api = authentication.auth_twitter_api()
@@ -31,9 +34,9 @@ def add_users_to_list(list_id):
       time.sleep(config.SLEEP_TIME)
     except Exception as e:
       print(e)
-      print('リストできないユーザーが見つかりました。スキップします。')
+      #print('リストできないユーザーが見つかりました。スキップします。')
    
-  print('リスト化完了')
+  #print('リスト化完了')
   return 'True'
       
 def main():

@@ -12,10 +12,6 @@ end_point = "index.html"
 size = size=(1280, 800)
 
 
-# @eel.expose
-# def text_function(str):
-#   print(str)
-
 
 @eel.expose
 def search_tweet(keyword):
@@ -53,9 +49,10 @@ def upload_users(list_id):
   
 @eel.expose
 def make_new_list(list_name, list_desc):
-  upload.set_new_list(list_name, list_desc)
+  finish_flag = upload.set_new_list(list_name, list_desc)
 
-  
+  return finish_flag
+
 def main():
   desktop.start(app_name,end_point,size)
   

@@ -27,7 +27,8 @@ table > tbody > tr > th {
 #searching_users,
 #searching_users_profile,
 #getting_lists,
-#uploading_users {
+#uploading_users,
+#making_new_list {
   color:blue;
   font-weight:bold;
   display: none;
